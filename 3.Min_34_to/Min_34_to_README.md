@@ -128,4 +128,30 @@ Listening for API Calls
 
 ```
 
-Next, 
+Next, **set up our function `usdPrices` in index.js:**
+
+```js
+//At (44:25) added function usdPrices:
+  const usdPrices = {
+    tokenOne: responseOne.raw.usdPrice,
+    tokenTwo: responseTwo.raw.usdPrice,
+    ratio: responseOne.raw.usdPrice/responseTwo.raw.usdPrice
+  }
+
+  return res.status(200).json(usdPrices); //
+  // return res.status(200).json({});
+
+```
+
+Backend completed [45:14](https://youtu.be/t8U7GRrlYW8?t=2714). 
+Restart node server. 
+
+Make the same URL request: 
+`http://localhost:3001/tokenPrice?addressOne=0x514910771af9ca656af840dff83e8264ecf986ca&addressTwo=0xdac17f958d2ee523a2206206994597c13d831ec7`
+
+And now the browser displays our tokenOne USD price, tokenTwo USD price and ratio: 
+```js
+{"tokenOne":7.6262867747459,"tokenTwo":1.0005001000074858,"ratio":7.622474775053835}
+
+```
+
