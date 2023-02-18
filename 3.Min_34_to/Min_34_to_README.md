@@ -59,3 +59,37 @@ Moralis.start({
 
 # To start Node.js Backend Server run `node index.js` [38:55](https://youtu.be/t8U7GRrlYW8?t=2335). 
 
+When running, make a call to localhost 3001. 
+
+>Visit http://localhost:3001/tokenPrice and see the empty json we are initially sending from the backend. 
+
+Review [Moralis Docs](https://docs.moralis.io).
+
+
+## MORALIS API ENDPOINTS AT: https://docs.moralis.io/web3-data-api/reference/get-token-price
+
+[Moralis endpoints](https://docs.moralis.io/web3-data-api/reference/get-token-price). 
+
+**Set up our API call in app.get() to the `tokenPrice` endpoint: 
+```js
+app.get("/tokenPrice", async (req, res) => {
+
+      const {query} = req; 
+
+      const responseOne = await Moralis.EvmApi.token.getTokenPrice({
+        address: query.addressOne
+      })
+
+      console.log(responseOne.raw);
+
+      const responseTwo = await Moralis.EvmApi.token.getTokenPrice({
+        address: query.addressTwo
+      })
+
+      console.log(responseTwo.raw); 
+
+      // return res.status(200).json(usdPrices);
+      return res.status(200).json({});
+});
+
+```
