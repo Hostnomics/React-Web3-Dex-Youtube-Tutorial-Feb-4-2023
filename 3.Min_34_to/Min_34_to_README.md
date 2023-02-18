@@ -80,16 +80,52 @@ app.get("/tokenPrice", async (req, res) => {
         address: query.addressOne
       })
 
-      console.log(responseOne.raw);
-
+      
       const responseTwo = await Moralis.EvmApi.token.getTokenPrice({
         address: query.addressTwo
       })
 
-      console.log(responseTwo.raw); 
+        console.log(responseOne.raw);
+        console.log(responseTwo.raw); 
 
       // return res.status(200).json(usdPrices);
       return res.status(200).json({});
 });
 
 ```
+
+
+**Restart the node server since we made a change.**
+**Make the following call in the browser:**
+
+`http://localhost:3001/tokenPrice?addressOne=0x514910771af9ca656af840dff83e8264ecf986ca&addressTwo=0xdac17f958d2ee523a2206206994597c13d831ec7`
+
+This returns in the Visual Studio code node server terminal; 
+```js
+$ node index.js
+Listening for API Calls
+{
+  nativePrice: {
+    value: '4488531490291842',
+    decimals: 18,
+    name: 'Ether',
+    symbol: 'ETH'
+  },
+  usdPrice: 7.627049403423374,
+  exchangeAddress: '0x1f98431c8ad98523631ae4a59f267346ea31f984',
+  exchangeName: 'Uniswap v3'
+}
+  nativePrice: {
+    value: '588796003197261',
+    decimals: 18,
+    name: 'Ether',
+    symbol: 'ETH'
+  },
+  usdPrice: 1.0005001000074858,
+  exchangeAddress: '0x1f98431c8ad98523631ae4a59f267346ea31f984',
+  exchangeName: 'Uniswap v3'
+}
+
+```
+
+Next, 
