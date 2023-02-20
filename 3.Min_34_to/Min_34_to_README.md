@@ -305,3 +305,20 @@ Value displayed in Input 1 and 2
 
 ```
 
+ **Added (57:01) so input 1 is disabled if we can't retrieve prices from backend/Moralis API**
+    <Input 
+        placeholder="0" 
+        value={tokenOneAmount} 
+        onChange={changeAmount} 
+        disabled={!prices}
+    />
+
+```js
+    <Input 
+        placeholder="0" 
+        value={tokenOneAmount} 
+        onChange={changeAmount} 
+        disabled={!prices}
+    />
+```
+
