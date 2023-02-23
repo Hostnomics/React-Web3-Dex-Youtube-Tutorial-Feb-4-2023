@@ -1,4 +1,4 @@
-_(Covers minutes 35 to )_
+_(Covers minutes 35 to 58)_
 
 ## Moralis API to get the token addresses [(35:35)](https://youtu.be/t8U7GRrlYW8?t=2135). 
 
@@ -319,14 +319,5 @@ Value displayed in Input 1 and 2
 ```
 
 
-At [58:20](https://youtu.be/t8U7GRrlYW8?t=3500). **IMPORT Wagmi** into `dex/src/index.js`: 
 
-```js
-import { configureChains, mainnet, WagmiConfig, createClient } from 'wagmi'  //At (58:20) Import from Wagmi
-
-```
-
-[Read more about infura here](https://decrypt.co/resources/what-is-infura).
-
-[Visit Infura directly here](https://www.infura.io/). 
 
