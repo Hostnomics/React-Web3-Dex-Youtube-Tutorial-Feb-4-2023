@@ -306,19 +306,27 @@ Value displayed in Input 1 and 2
 ```
 
  **Added (57:01) so input 1 is disabled if we can't retrieve prices from backend/Moralis API**
-    <Input 
-        placeholder="0" 
-        value={tokenOneAmount} 
-        onChange={changeAmount} 
-        disabled={!prices}
-    />
 
 ```js
     <Input 
         placeholder="0" 
         value={tokenOneAmount} 
         onChange={changeAmount} 
+        // Added (57:01) so input 1 is disabled if we can't retrieve prices from backend/Moralis API
         disabled={!prices}
     />
+
 ```
+
+
+At [58:20](https://youtu.be/t8U7GRrlYW8?t=3500). **IMPORT Wagmi** into `dex/src/index.js`: 
+
+```js
+import { configureChains, mainnet, WagmiConfig, createClient } from 'wagmi'  //At (58:20) Import from Wagmi
+
+```
+
+[Read more about infura here](https://decrypt.co/resources/what-is-infura).
+
+[Visit Infura directly here](https://www.infura.io/). 
 
